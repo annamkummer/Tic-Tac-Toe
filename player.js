@@ -1,4 +1,5 @@
 class Player {
+// Revisit constructor parameters when buidling localStorage
   constructor(id, token, wins) {
     this.id = id;
     this.token = token;
