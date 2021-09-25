@@ -61,16 +61,21 @@ White: #ffffff
    margin-top: 20%;
  }
 
- .box-5, .box-2, .box-8 {
+ .box-4, .box-1, .box-7 {
+   display: flex;
    border-left: #ff0089 solid 8px;
    border-right: #ff0089 solid 8px;
  }
 
- .box-5, .box-4, .box-6 {
-   border-top: #00ff77 solid 8px;
-   border-bottom: #00ff77 solid 8px;
+ .box-4, .box-3, .box-5 {
+   display: flex;
+   border-top: #ff0089 solid 8px;
+   border-bottom: #ff0089 solid 8px;
  }
 
  article {
    width: 30%;
- }
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
