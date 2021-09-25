@@ -19,6 +19,10 @@ White: #ffffff
    border: black solid 2px;
  } */
 
+* {
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
  main {
    display: flex;
    height: 100vh;
@@ -26,9 +30,13 @@ White: #ffffff
  }
 
  h1 {
-   font-size: 250%;
-   padding-top: 15%;
+   font-size: 350%;
    color: #0006aa;
+ }
+
+ h2 {
+   color: #ff0089;
+   font-size: 200%;
  }
 
  .side-panel {
@@ -61,16 +69,29 @@ White: #ffffff
    margin-top: 20%;
  }
 
- .box-5, .box-2, .box-8 {
+ .box-4, .box-1, .box-7 {
+   display: flex;
    border-left: #ff0089 solid 8px;
    border-right: #ff0089 solid 8px;
  }
 
- .box-5, .box-4, .box-6 {
-   border-top: #00ff77 solid 8px;
-   border-bottom: #00ff77 solid 8px;
+ .box-4, .box-3, .box-5 {
+   display: flex;
+   border-top: #ff0089 solid 8px;
+   border-bottom: #ff0089 solid 8px;
  }
 
  article {
    width: 30%;
- }
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.token-image {
+  width: 75%;
+}
+
+.header-image {
+  width: 9%
+}
