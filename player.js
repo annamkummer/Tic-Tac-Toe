@@ -1,5 +1,4 @@
 class Player {
-// Revisit constructor parameters when buidling localStorage
   constructor(id, token, wins) {
     this.id = id;
     this.token = token;
@@ -7,10 +6,15 @@ class Player {
   }
 
   saveWinsToStorage() {
-// Put localStorage function here
+    var stringifiedWins = JSON.stringify(this.wins);
+    var savedWins = localStorage.setItem(`${this.id}`, stringifiedWins);
   }
 
   retrieveWinsFromStorage() {
-// Put localStorage function here
+    if (localStorage[`${this.id}`]) {
+      var savedWins = localStorage.getItem(`${this.id}`);
+      var parsedWins = JSON.parse(savedWins);
+      return parsedWins;
+    }
   }
 }
