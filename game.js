@@ -45,16 +45,13 @@ class Game {
       var c = winningBoards[i][2];
 // Can this conditional be clearer?
       if ((!(this.board[a] ==='empty') || !(this.board[b] === 'empty') || !(this.board[c] === 'empty')) && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
-// Console.logs in 49, 53, 57 to be replaced with DOM interactions.
-        console.log('winner: ', this.board[a])
-        return;
+        return this.board[a];
       }
     }
     if (!this.board.includes('empty')) {
-      console.log('draw')
-      return;
+      return 'draw'
     }
-    console.log('false')
+    return 'false'
   }
 
   resetBoard() {

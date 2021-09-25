@@ -9,7 +9,8 @@ var box5 = document.querySelector('#box5');
 var box6 = document.querySelector('#box6');
 var box7 = document.querySelector('#box7');
 var box8 = document.querySelector('#box8');
-var gameboard = document.querySelector('#gameboard')
+var gameboard = document.querySelector('#gameboard');
+var header = document.querySelector('#header');
 
 var gameBoxes = [
   box0,
@@ -52,5 +53,24 @@ function displayBoard() {
     if (game.board[i] === 'sunshine') {
       gameBoxes[i].innerHTML = `<img class="token-image" src="assets/sun.svg" alt="sun">`;
     }
+  }
+  checkForWin();
+}
+
+function checkForWin() {
+  var result = game.checkForWin();
+  if (!result) {
+    return
+  }
+  if (result === 'draw') {
+    header.innerText = `It's a draw!`
+  } else {
+    if (result === 'snowflake') {
+      var winner = `<img class="header-image" src="assets/snowflake.svg" alt="snowflake">`
+    }
+    if (result === 'sunshine') {
+      var winner = `<img class="header-image" src="assets/sun.svg" alt="sun">`
+    }
+    header.innerHTML = `${winner} wins!`
   }
 }
