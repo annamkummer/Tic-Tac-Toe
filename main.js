@@ -73,15 +73,15 @@ function checkForWin() {
     displayTurn();
     return;
   } else if (result === 'draw') {
-    header.innerText = `It's a draw!`
+    header.innerText = `It's a draw!`;
   } else {
     if (result === 'snowflake') {
-      var winner = `<img class="header-image" src="assets/snowflake.svg" alt="snowflake">`
+      var winner = `<img class="header-image" src="assets/snowflake.svg" alt="snowflake">`;
     }
     if (result === 'sunshine') {
-      var winner = `<img class="header-image" src="assets/sun.svg" alt="sun">`
+      var winner = `<img class="header-image" src="assets/sun.svg" alt="sun">`;
     }
-    header.innerHTML = `${winner} wins!`
+    header.innerHTML = `${winner} wins!`;
   }
   endGame();
 }
