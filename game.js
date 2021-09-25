@@ -51,7 +51,7 @@ class Game {
     if (!this.board.includes('empty')) {
       return 'draw'
     }
-    return 'false'
+    return false;
   }
 
   resetBoard() {

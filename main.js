@@ -60,9 +60,8 @@ function displayBoard() {
 function checkForWin() {
   var result = game.checkForWin();
   if (!result) {
-    return
-  }
-  if (result === 'draw') {
+    return;
+  } else if (result === 'draw') {
     header.innerText = `It's a draw!`
   } else {
     if (result === 'snowflake') {
@@ -73,4 +72,10 @@ function checkForWin() {
     }
     header.innerHTML = `${winner} wins!`
   }
+  endGame();
+}
+
+function endGame() {
+  game.resetBoard();
+  setTimeout(displayBoard, 1000);
 }
