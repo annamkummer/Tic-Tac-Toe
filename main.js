@@ -25,10 +25,32 @@ var gameBoxes = [
 
 gameboard.addEventListener('click', findBox)
 
+newGame()
+
+function newGame() {
+  game.createPlayers();
+  displayBoard();
+}
+
 function findBox() {
   for (var i = 0; i < gameBoxes.length; i++) {
     if (event.target === gameBoxes[i]) {
-      console.log(event.target)
+      game.playToken(i);
+    }
+  }
+  displayBoard();
+}
+
+function displayBoard() {
+  for (var i = 0; i < game.board.length; i++) {
+    if (game.board[i] === 'empty') {
+      gameBoxes[i].innerText = '';
+    }
+    if (game.board[i] === 'snowflake') {
+      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/snowflake.svg" alt="snowflake">`;
+    }
+    if (game.board[i] === 'sunshine') {
+      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/sun.svg" alt="sun">`;
     }
   }
 }

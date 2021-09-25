@@ -79,3 +79,7 @@ White: #ffffff
    justify-content: center;
    align-items: center;
 }
+
+.token-image {
+  width: 75%;
+}

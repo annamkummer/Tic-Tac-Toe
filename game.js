@@ -13,9 +13,9 @@ class Game {
   }
 
 // The 'box' and 'token' parameters are currently input manually. Revisit when building DOM interaction.
-  playToken(box, token) {
+  playToken(box) {
     if (this.board[box] === 'empty') {
-      this.board.splice(box, 1, token);
+      this.board.splice(box, 1, this.turn.token);
     }
     this.switchTurn();
   }
