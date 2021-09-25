@@ -8,6 +8,12 @@ class Game {
   createPlayers() {
     var playerSnow = new Player('snow', 'snowflake');
     var playerSun = new Player('sun', 'sunshine');
+    if (playerSnow.retrieveWinsFromStorage()) {
+      playerSnow.wins = playerSnow.retrieveWinsFromStorage();
+    }
+    if (playerSun.retrieveWinsFromStorage()) {
+      playerSun.wins = playerSun.retrieveWinsFromStorage();
+    }
     this.players.push(playerSnow, playerSun);
     this.turn = this.players[0];
   }
@@ -44,6 +50,7 @@ class Game {
       var c = winningBoards[i][2];
 // Can this conditional be clearer?
       if ((!(this.board[a] ==='empty') || !(this.board[b] === 'empty') || !(this.board[c] === 'empty')) && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+        this.updateWinCount(this.board[a])
         return this.board[a];
       }
     }
@@ -51,6 +58,15 @@ class Game {
       return 'draw';
     }
     return false;
+  }
+
+  updateWinCount(token) {
+    for (var i = 0; i < this.players.length; i++) {
+      if (this.players[i].token === token) {
+        this.players[i].wins += 1;
+        this.players[i].saveWinsToStorage();
+      }
+    }
   }
 
   resetBoard() {
