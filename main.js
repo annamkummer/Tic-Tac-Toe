@@ -11,6 +11,8 @@ var box7 = document.querySelector('#box7');
 var box8 = document.querySelector('#box8');
 var gameboard = document.querySelector('#gameboard');
 var header = document.querySelector('#header');
+var player0Wins = document.querySelector('#player0Wins')
+var player1Wins = document.querySelector('#player1Wins')
 
 var gameBoxes = [
   box0,
@@ -31,6 +33,22 @@ newGame()
 function newGame() {
   game.createPlayers();
   displayBoard();
+  displayWins();
+}
+
+function displayWins() {
+  var winDisplayText = []
+  for (var i = 0; i < game.players.length; i++) {
+    var numberOfWins = game.players[i].wins;
+    if (numberOfWins === 1) {
+      var winText = 'win';
+    } else {
+      var winText = 'wins';
+    }
+    winDisplayText.push(`${numberOfWins} ${winText}`)
+  }
+  player0Wins.innerText = winDisplayText[0];
+  player1Wins.innerText = winDisplayText[1];
 }
 
 function findBox() {
@@ -89,4 +107,5 @@ function checkForWin() {
 function endGame() {
   game.resetBoard();
   setTimeout(displayBoard, 1000);
+  displayWins();
 }
