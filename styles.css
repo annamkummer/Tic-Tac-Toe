@@ -19,6 +19,10 @@ White: #ffffff
    border: black solid 2px;
  } */
 
+* {
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
  main {
    display: flex;
    height: 100vh;
@@ -26,9 +30,13 @@ White: #ffffff
  }
 
  h1 {
-   font-size: 250%;
-   padding-top: 15%;
+   font-size: 350%;
    color: #0006aa;
+ }
+
+ h2 {
+   color: #ff0089;
+   font-size: 200%;
  }
 
  .side-panel {

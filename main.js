@@ -64,7 +64,7 @@ function displayTurn() {
   if (game.turn.token === 'sunshine') {
     var player = `<img class="header-image" src="assets/sun.svg" alt="sun">`;
   }
-  header.innerHTML = `It's ${player}'s turn!'`
+  header.innerHTML = `It's ${player}'s turn!`
 }
 
 function checkForWin() {
