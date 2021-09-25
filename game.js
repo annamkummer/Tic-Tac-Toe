@@ -54,6 +54,10 @@ class Game {
     }
     console.log('false')
   }
+
+  resetBoard() {
+    this.board = ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'];
+  }
 }
 
 // A Game should include:
@@ -62,4 +66,4 @@ class Game {
 // *A way to keep track of which player’s turn it currently is
 // *A way to check the Game’s board data for win conditions
 // *A way to detect when a game is a draw (no one has won)
-// A way to reset the Game’s board to begin a new game
+// *A way to reset the Game’s board to begin a new game
