@@ -10,12 +10,12 @@ class Game {
       id: 'snow',
       tokenImg: 'assets/snowflake.svg',
       tokenAltText: 'snowflake',
-    }
+    };
     var sun = {
       id: 'sunshine',
       tokenImg: 'assets/sun.svg',
       tokenAltText: 'sun',
-    }
+    };
     var playerSnow = new Player(snow);
     var playerSun = new Player(sun);
     this.players.push(playerSnow, playerSun);

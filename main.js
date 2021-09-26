@@ -19,16 +19,16 @@ function newGame() {
 function createGameboard() {
   gameboard.innerHTML =  ``;
   for (var i = 0; i < 9; i++) {
-    gameboard.innerHTML += `<article class='box-${i}' id='${i}'></article>`
+    gameboard.innerHTML += `<article class='squares box-${i}' id='${i}'></article>`;
   }
 }
 
 function displayTurn() {
-  header.innerHTML = `It's <img class='header-image' src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`
+  header.innerHTML = `It's <img class='header-image' src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`;
 }
 
 function displayWins() {
-  var winDisplayText = []
+  var winDisplayText = [];
   for (var i = 0; i < game.players.length; i++) {
     if (game.players[i].wins === 1) {
       var winText = 'win';
@@ -42,9 +42,9 @@ function displayWins() {
 }
 
 function displayToken() {
-  if (!event.target.classList.contains('token-image')) {
+  if (event.target.classList.contains('squares')) {
     game.playToken(event.target.id);
-    event.target.innerHTML = `<img class="token-image" src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
+    event.target.innerHTML = `<img class='token-image' src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
   }
   checkForWin();
 }
@@ -65,5 +65,6 @@ function checkForWin() {
 function endGame() {
   game.resetBoard();
   setTimeout(createGameboard, 1000);
+  setTimeout(displayTurn, 1000);
   displayWins();
 }
