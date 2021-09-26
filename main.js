@@ -56,11 +56,16 @@ function checkForWin() {
     displayTurn();
     return;
   } else if (result === 'draw') {
-    header.innerText = `It's a draw!`;
+    header.innerText = `Cat's game!`;
+    showDrawImage()
   } else {
     header.innerHTML = `<img class='header-image' src=${result.tokenImg} alt=${result.tokenAltText}> wins!`;
   }
   endGame();
+}
+
+function showDrawImage() {
+  gameboard.innerHTML = `<img class='end-game-image' src='assets/cat.jpeg' alt='cat with tongue out'>`;
 }
 
 function endGame() {
