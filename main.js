@@ -45,6 +45,7 @@ function displayToken() {
   if (event.target.classList.contains('squares')) {
     game.playToken(event.target.id);
     event.target.innerHTML = `<img class='token-image' src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
+    event.target.classList.remove('squares');
   }
   checkForWin();
 }

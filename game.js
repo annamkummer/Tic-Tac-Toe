@@ -23,10 +23,8 @@ class Game {
   }
 
   playToken(box) {
-    if (this.board[box] === 'empty') {
-      this.board.splice(box, 1, this.turn);
-      this.switchTurn();
-    }
+    this.board.splice(box, 1, this.turn);
+    this.switchTurn();
   }
 
   switchTurn() {
