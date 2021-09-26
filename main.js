@@ -18,7 +18,7 @@ function newGame() {
 function createGameboard() {
   gameboard.innerHTML =  ``;
   for (var i = 0; i < 9; i++) {
-    gameboard.innerHTML += `<article class='free-square box-${i}' id='${i}'></article>`;
+    gameboard.innerHTML += `<article class='squares free-square box-${i}' id='${i}'></article>`;
   }
 }
 
@@ -36,7 +36,7 @@ function emphasizeTurn() {
     }
     sidePanels[i].innerHTML = `
       <img class=${turn} src=${game.players[i].tokenImg} alt=${game.players[i].tokenAltText}>
-      <h2>${displayWins(game.players[i])}</h2>
+      <h2 class='win-display'>${displayWins(game.players[i])}</h2>
       `;
   }
 }

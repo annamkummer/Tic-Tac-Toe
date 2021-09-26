@@ -8,7 +8,7 @@
    justify-content: center;
  }
 
- h2 {
+ .win-display {
    color: #ff0089;
    font-size: 200%;
  }
@@ -65,7 +65,7 @@
   border-bottom: #ff0089 solid 8px;
 }
 
-article {
+.squares {
   display: flex;
   justify-content: center;
   align-items: center;
