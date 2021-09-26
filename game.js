@@ -6,21 +6,25 @@ class Game {
   }
 
   createPlayers() {
-    var playerSnow = new Player('snow', 'snowflake');
-    var playerSun = new Player('sun', 'sunshine');
-    if (playerSnow.retrieveWinsFromStorage()) {
-      playerSnow.wins = playerSnow.retrieveWinsFromStorage();
+    var snow = {
+      id: 'snow',
+      tokenImg: 'assets/snowflake.svg',
+      tokenAltText: 'snowflake',
     }
-    if (playerSun.retrieveWinsFromStorage()) {
-      playerSun.wins = playerSun.retrieveWinsFromStorage();
+    var sun = {
+      id: 'sunshine',
+      tokenImg: 'assets/sun.svg',
+      tokenAltText: 'sun',
     }
+    var playerSnow = new Player(snow);
+    var playerSun = new Player(sun);
     this.players.push(playerSnow, playerSun);
     this.turn = this.players[0];
   }
 
   playToken(box) {
     if (this.board[box] === 'empty') {
-      this.board.splice(box, 1, this.turn.token);
+      this.board.splice(box, 1, this.turn);
       this.switchTurn();
     }
   }
@@ -60,9 +64,9 @@ class Game {
     return false;
   }
 
-  updateWinCount(token) {
+  updateWinCount(winner) {
     for (var i = 0; i < this.players.length; i++) {
-      if (this.players[i].token === token) {
+      if (this.players[i].id === winner.id) {
         this.players[i].wins += 1;
         this.players[i].saveWinsToStorage();
       }

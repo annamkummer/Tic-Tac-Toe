@@ -1,8 +1,9 @@
 class Player {
-  constructor(id, token, wins) {
-    this.id = id;
-    this.token = token;
-    this.wins = wins || 0;
+  constructor(player) {
+    this.id = player.id;
+    this.tokenImg = player.tokenImg;
+    this.tokenAltText = player.tokenAltText;
+    this.wins = this.retrieveWinsFromStorage();
   }
 
   saveWinsToStorage() {
@@ -15,6 +16,8 @@ class Player {
       var savedWins = localStorage.getItem(`${this.id}`);
       var parsedWins = JSON.parse(savedWins);
       return parsedWins;
+    } else {
+      return 0;
     }
   }
 }

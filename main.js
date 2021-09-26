@@ -36,19 +36,41 @@ function newGame() {
   displayWins();
 }
 
+function displayBoard() {
+  for (var i = 0; i < game.board.length; i++) {
+    if (game.board[i] === 'empty') {
+      gameBoxes[i].innerText = '';
+    } else {
+      gameBoxes[i].innerHTML = `<img class='token-image' src=${game.board[i].tokenImg} alt=${game.board[i].tokenAltText}>`
+    }
+
+
+    if (game.board[i] === 'snow') {
+      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/snowflake.svg" alt="snowflake">`;
+    }
+    if (game.board[i] === 'sunshine') {
+      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/sun.svg" alt="sun">`;
+    }
+  }
+  checkForWin();
+}
+
 function displayWins() {
   var winDisplayText = []
   for (var i = 0; i < game.players.length; i++) {
-    var numberOfWins = game.players[i].wins;
-    if (numberOfWins === 1) {
+    if (game.players[i].wins === 1) {
       var winText = 'win';
     } else {
       var winText = 'wins';
     }
-    winDisplayText.push(`${numberOfWins} ${winText}`);
+    winDisplayText.push(`${game.players[i].wins} ${winText}`);
   }
   player0Wins.innerText = winDisplayText[0];
   player1Wins.innerText = winDisplayText[1];
+}
+
+function displayTurn() {
+  header.innerHTML = `It's <img class='header-image' src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`
 }
 
 function findBox() {
@@ -60,31 +82,6 @@ function findBox() {
   displayBoard();
 }
 
-function displayBoard() {
-  for (var i = 0; i < game.board.length; i++) {
-    if (game.board[i] === 'empty') {
-      gameBoxes[i].innerText = '';
-    }
-    if (game.board[i] === 'snowflake') {
-      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/snowflake.svg" alt="snowflake">`;
-    }
-    if (game.board[i] === 'sunshine') {
-      gameBoxes[i].innerHTML = `<img class="token-image" src="assets/sun.svg" alt="sun">`;
-    }
-  }
-  checkForWin();
-}
-
-function displayTurn() {
-  if (game.turn.token === 'snowflake') {
-    var player = `<img class="header-image" src="assets/snowflake.svg" alt="snowflake">`;
-  }
-  if (game.turn.token === 'sunshine') {
-    var player = `<img class="header-image" src="assets/sun.svg" alt="sun">`;
-  }
-  header.innerHTML = `It's ${player}'s turn!`
-}
-
 function checkForWin() {
   var result = game.checkForWin();
   if (!result) {
@@ -93,13 +90,7 @@ function checkForWin() {
   } else if (result === 'draw') {
     header.innerText = `It's a draw!`;
   } else {
-    if (result === 'snowflake') {
-      var winner = `<img class="header-image" src="assets/snowflake.svg" alt="snowflake">`;
-    }
-    if (result === 'sunshine') {
-      var winner = `<img class="header-image" src="assets/sun.svg" alt="sun">`;
-    }
-    header.innerHTML = `${winner} wins!`;
+    header.innerHTML = `<img class='header-image' src=${result.tokenImg} alt=${result.tokenAltText}> wins!`;
   }
   endGame();
 }
