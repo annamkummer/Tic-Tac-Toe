@@ -1,24 +1,3 @@
-/* Colors:
---Main--
-Blue: #0009ff
-Pink: #ff0089
-Yellow: #fff600
-Green: #00ff77
-
---Monochrome--
-Bright blue: #0009ff
-Medium blue: #0006aa
-Dark blue: #000355
-
---General--
-White: #ffffff
-*/
-
-/*
-* {
-   border: black solid 2px;
- } */
-
 * {
   font-family: 'Baloo Paaji 2', cursive;
 }
@@ -27,11 +6,6 @@ White: #ffffff
    display: flex;
    height: 100vh;
    justify-content: center;
- }
-
- h1 {
-   font-size: 350%;
-   color: #0006aa;
  }
 
  h2 {
@@ -53,53 +27,51 @@ White: #ffffff
  }
 
 .title {
-  height: 30%;
+  height: 20%;
+  margin: 20% 0% 0% 0%;
+  font-size: 350%;
+  color: #0006aa;
 }
 
- .gameboard {
-   height: 60%;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-template-rows: repeat(3, 1fr);
-   justify-content: center;
-   margin: 0 10% 0 10%;
- }
+.gameboard {
+  height: 60%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  margin: 0 10% 0 10%;
+}
 
- /* .side-image {
-   width: 25%;
-   margin-top: 20%;
- } */
+.not-turn {
+  width: 25%;
+  margin: 50% 0% 22.5% 0%;
+}
 
- .not-turn {
-   width: 25%;
-   margin: 50% 0% 22.5% 0%;
- }
-
- .turn {
+.turn {
   width: 40%;
   padding: 15%;
   margin-top: 20%;
   border: #00ff77 dotted 10px;
   border-radius: 50%;
- }
-
- .box-4, .box-1, .box-7 {
-   border-left: #ff0089 solid 8px;
-   border-right: #ff0089 solid 8px;
- }
-
- .box-4, .box-3, .box-5 {
-   border-top: #ff0089 solid 8px;
-   border-bottom: #ff0089 solid 8px;
- }
-
- article {
-   display: flex;
-   justify-content: center;
-   align-items: center;
 }
 
-.squares:hover {
+.box-4, .box-1, .box-7 {
+  border-left: #ff0089 solid 8px;
+  border-right: #ff0089 solid 8px;
+}
+
+.box-4, .box-3, .box-5 {
+  border-top: #ff0089 solid 8px;
+  border-bottom: #ff0089 solid 8px;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.free-square:hover {
   cursor: pointer;
 }
 
@@ -112,5 +84,5 @@ White: #ffffff
 }
 
 .end-game-image {
-  width: 300%;
+  width: 275%;
 }
