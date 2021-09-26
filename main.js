@@ -56,16 +56,26 @@ function checkForWin() {
     displayTurn();
     return;
   } else if (result === 'draw') {
-    header.innerText = `It's a draw!`;
+    header.innerText = `Cat's game!`;
+    showDrawImage();
   } else {
     header.innerHTML = `<img class='header-image' src=${result.tokenImg} alt=${result.tokenAltText}> wins!`;
+    showWinImage();
   }
   endGame();
 }
 
+function showDrawImage() {
+  gameboard.innerHTML = `<img class='end-game-image' src='assets/cat.jpeg' alt='cat with tongue out'>`;
+}
+
+function showWinImage() {
+  gameboard.innerHTML = `<img class='end-game-image' src='assets/lightning.svg' alt='blue lightning bolt'>`;
+}
+
 function endGame() {
   game.resetBoard();
-  setTimeout(createGameboard, 1000);
-  setTimeout(displayTurn, 1000);
+  setTimeout(createGameboard, 1500);
+  setTimeout(displayTurn, 1500);
   displayWins();
 }
