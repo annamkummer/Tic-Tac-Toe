@@ -59,6 +59,7 @@ function displayToken() {
   checkForWin();
 }
 
+// Is there a better way to write this?
 function checkForWin() {
   var result = game.checkForWin();
   if (!result) {

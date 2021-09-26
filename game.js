@@ -35,6 +35,7 @@ class Game {
     }
   }
 
+// Can this checkForWins function be refactored?
   checkForWin() {
     var winningBoards = [
       [0, 1, 2],
