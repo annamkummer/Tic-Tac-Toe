@@ -65,9 +65,22 @@ White: #ffffff
    margin: 0 10% 0 10%;
  }
 
- .sun, .snowflake {
+ /* .side-image {
    width: 25%;
    margin-top: 20%;
+ } */
+
+ .not-turn {
+   width: 25%;
+   margin: 50% 0% 22.5% 0%;
+ }
+
+ .turn {
+  width: 40%;
+  padding: 15%;
+  margin-top: 20%;
+  border: #00ff77 dotted 10px;
+  border-radius: 50%;
  }
 
  .box-4, .box-1, .box-7 {

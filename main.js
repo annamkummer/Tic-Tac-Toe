@@ -4,6 +4,8 @@ var gameboard = document.querySelector('#gameboard');
 var header = document.querySelector('#header');
 var player0Wins = document.querySelector('#player0Wins');
 var player1Wins = document.querySelector('#player1Wins');
+var snowSideImg = document.querySelector('#snow')
+var sunSideImg = document.querySelector('#sunshine')
 
 gameboard.addEventListener('click', displayToken);
 
@@ -13,6 +15,10 @@ function newGame() {
   game.createPlayers();
   createGameboard();
   displayTurn();
+  snowSideImg.classList.add('turn');
+  snowSideImg.classList.remove('not-turn');
+  sunSideImg.classList.remove('turn');
+  sunSideImg.classList.add('not-turn');
   displayWins();
 }
 
@@ -25,6 +31,18 @@ function createGameboard() {
 
 function displayTurn() {
   header.innerHTML = `It's <img class='header-image' src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`;
+
+  if (game.turn.id === 'sunshine') {
+    sunSideImg.classList.add('turn')
+    snowSideImg.classList.remove('turn')
+    sunSideImg.classList.remove('not-turn')
+    snowSideImg.classList.add('not-turn')
+  } else {
+    snowSideImg.classList.add('turn')
+    sunSideImg.classList.remove('turn')
+    snowSideImg.classList.remove('not-turn')
+    sunSideImg.classList.add('not-turn')
+  }
 }
 
 function displayWins() {
