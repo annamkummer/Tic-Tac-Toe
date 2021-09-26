@@ -14,8 +14,8 @@ Dark blue: #000355
 White: #ffffff
 */
 
-
-/* * {
+/*
+* {
    border: black solid 2px;
  } */
 
@@ -58,8 +58,9 @@ White: #ffffff
 
  .gameboard {
    height: 60%;
-   display: flex;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
    justify-content: center;
    margin: 0 10% 0 10%;
  }
@@ -70,19 +71,16 @@ White: #ffffff
  }
 
  .box-4, .box-1, .box-7 {
-   display: flex;
    border-left: #ff0089 solid 8px;
    border-right: #ff0089 solid 8px;
  }
 
  .box-4, .box-3, .box-5 {
-   display: flex;
    border-top: #ff0089 solid 8px;
    border-bottom: #ff0089 solid 8px;
  }
 
  article {
-   width: 30%;
    display: flex;
    justify-content: center;
    align-items: center;
