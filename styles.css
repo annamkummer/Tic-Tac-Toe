@@ -86,6 +86,10 @@ White: #ffffff
    align-items: center;
 }
 
+.squares:hover {
+  cursor: pointer;
+}
+
 .token-image {
   width: 75%;
 }
