@@ -42,8 +42,10 @@ function displayWins() {
 }
 
 function displayToken() {
-  game.playToken(event.target.id);
-  event.target.innerHTML = `<img class="token-image" src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
+  if (!event.target.classList.contains('token-image')) {
+    game.playToken(event.target.id);
+    event.target.innerHTML = `<img class="token-image" src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
+  }
   checkForWin();
 }
 
