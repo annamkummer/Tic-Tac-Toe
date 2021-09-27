@@ -1,5 +1,6 @@
 class Game {
   constructor() {
+		// Could the string empty just be an emtpy string here?
     this.board = ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'];
     this.players = [];
     this.turn = null;
@@ -46,18 +47,23 @@ class Game {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
     for (var i = 0; i < winningBoards.length; i++) {
       var a = winningBoards[i][0];
       var b = winningBoards[i][1];
       var c = winningBoards[i][2];
 // Can this conditional be clearer?
-      if ((!(this.board[a] ==='empty') || !(this.board[b] === 'empty') || !(this.board[c] === 'empty')) && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+/**
+ * If you checked for empties first would ou have to do it again here??
+ * Could also skip these computations if there's an easy check you can do first
+ */
+      if (
+				(!(this.board[a] ==='empty') || !(this.board[b] === 'empty') || !(this.board[c] === 'empty')) &&
+				(this.board[a] === this.board[b] && this.board[a] === this.board[c])
+			) {
         this.updateWinCount(this.board[a]);
         return this.board[a];
       }
-    }
-    if (!this.board.includes('empty')) {
-      return 'draw';
     }
     return false;
   }

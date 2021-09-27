@@ -1,3 +1,5 @@
+// research immediately invoked functions to eliminate global variables
+
 var game = new Game();
 
 var gameboard = document.querySelector('#gameboard');
@@ -16,7 +18,8 @@ function newGame() {
 }
 
 function createGameboard() {
-  gameboard.innerHTML =  ``;
+  gameboard.innerHTML =  ``; // just a style thing but most style guides use single quotes for empty string or anything without interpolation in JS, Double for html (below)
+	// Check the mod 1 style guide to see what they are looking for there https://github.com/turingschool-examples/javascript/tree/main/es5#strings
   for (var i = 0; i < 9; i++) {
     gameboard.innerHTML += `<article class='squares free-square box-${i}' id='${i}'></article>`;
   }
@@ -30,7 +33,7 @@ function displayTurn() {
 function emphasizeTurn() {
   for (var i = 0; i < sidePanels.length; i++) {
     if (game.turn === game.players[i]) {
-      var turn = 'turn';
+      var turn = 'turn'; // A lot of times devs assign vars at the beginning  of a func for readbility and reassign if in conditional logic or the like
     } else {
       var turn = 'not-turn';
     }
@@ -62,7 +65,7 @@ function displayToken() {
 function checkForWin() {
   var result = game.checkForWin();
   if (!result) {
-    displayTurn();
+    displayTurn(); // could return this in one line
     return;
   } else if (result === 'draw') {
     showDrawContent();
