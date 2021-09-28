@@ -1,5 +1,3 @@
-// research immediately invoked functions to eliminate global variables
-
 var game = new Game();
 
 var gameboard = document.querySelector('#gameboard');
@@ -20,12 +18,12 @@ function newGame() {
 function createGameboard() {
   gameboard.innerHTML =  '';
   for (var i = 0; i < 9; i++) {
-    gameboard.innerHTML += `<article class='squares free-square box-${i}' id='${i}'></article>`;
+    gameboard.innerHTML += `<article class="squares free-square box-${i}" id="${i}"></article>`;
   }
 }
 
 function displayTurn() {
-  header.innerHTML = `It's <img class='header-image' src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`;
+  header.innerHTML = `It's <img class="header-image" src=${game.turn.tokenImg} alt=${game.turn.tokenAltText}>'s turn!`;
   emphasizeTurn();
 }
 
@@ -37,7 +35,7 @@ function emphasizeTurn() {
     }
     sidePanels[i].innerHTML = `
       <img class=${turn} src=${game.players[i].tokenImg} alt=${game.players[i].tokenAltText}>
-      <h2 class='win-display'>${displayWins(game.players[i])}</h2>
+      <h2 class="win-display">${displayWins(game.players[i])}</h2>
       `;
   }
 }
@@ -54,7 +52,7 @@ function displayWins(player) {
 function displayToken() {
   if (event.target.classList.contains('free-square')) {
     game.playToken(event.target.id);
-    event.target.innerHTML = `<img class='token-image' src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
+    event.target.innerHTML = `<img class="token-image" src=${game.board[event.target.id].tokenImg} alt=${game.board[event.target.id].tokenAltText}>`;
     event.target.classList.remove('free-square');
   }
   checkForWin();
@@ -74,15 +72,17 @@ function checkForWin() {
 
 function showDrawContent() {
   header.innerText = `Cat's game!`;
-  gameboard.innerHTML = `<img class='end-game-image' src='assets/cat.jpeg' alt='cat with tongue out'>`;
+  gameboard.innerHTML = `<img class="end-game-image" src="assets/cat.jpeg" alt="cat with tongue out">`;
 }
 
 function showWinContent(winner) {
-  header.innerHTML = `<img class='header-image' src=${winner.tokenImg} alt=${winner.tokenAltText}> wins!`;
-  gameboard.innerHTML = `<img class='end-game-image' src='assets/lightning.svg' alt='blue lightning bolt'>`;
+  header.innerHTML = `<img class="header-image" src=${winner.tokenImg} alt=${winner.tokenAltText}> wins!`;
+  gameboard.innerHTML = `<img class="end-game-image" src="assets/lightning.svg" alt="blue lightning bolt">`;
 }
 
 function endGame() {
   game.resetBoard();
-  setTimeout(newGame, 1500);
+  setTimeout(createGameboard, 1500);
+  setTimeout(displayTurn, 1500);
+  setTimeout(emphasizeTurn, 1500);
 }

@@ -51,18 +51,18 @@
   width: 40%;
   padding: 15%;
   margin-top: 20%;
-  border: #00ff77 dotted 10px;
+  border: 10px dotted #00ff77;
   border-radius: 50%;
 }
 
 .box-4, .box-1, .box-7 {
-  border-left: #ff0089 solid 8px;
-  border-right: #ff0089 solid 8px;
+  border-left: 8px solid #ff0089;
+  border-right: 8px solid #ff0089;
 }
 
 .box-4, .box-3, .box-5 {
-  border-top: #ff0089 solid 8px;
-  border-bottom: #ff0089 solid 8px;
+  border-top: 8px solid #ff0089;
+  border-bottom: 8px solid #ff0089;
 }
 
 .squares {
