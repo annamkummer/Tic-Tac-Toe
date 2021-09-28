@@ -1,19 +1,19 @@
 # Tic-Tac-Toe
-This version of the classic game pits snowflake against sunshine, notifies players about turns, wins, and draws, and keeps track of wins over time.
-<!-- gif -->
+This version of the classic game pits snowflake against sunshine, notifies players about turns, wins, and draws, and keeps track of wins over time.<br>
+
+https://user-images.githubusercontent.com/75143561/135121533-54c3b59f-fe3a-4173-a782-1cd154c559f7.mov
 
 <hr>
 
 ## Install and Setup
 In your terminal,
 - clone: git@github.com:annamkummer/AnnaAndDavidMotivationalPosters.git
-- and run: open index.html
-<br><br>
-The project specifications can be found here
+- and run: open index.html<br><br>
+The project specifications can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
 
 ## Contributers
-- [Anna Kummer] (https://github.com/annamkummer)
-- Review by [James Sullivan] (https://github.com/jsullivan5)
+- [Anna Kummer](https://github.com/annamkummer)
+- Review by [James Sullivan](https://github.com/jsullivan5)
 
 ## Technologies Used
 - JavaScript
@@ -37,3 +37,5 @@ The project specifications can be found here
  <!-- Overview of project and goals
 Overview of technologies used, your code architecture, challenges, wins, and any other reflections
 Screenshots/gifs of your app -->
+
+
