@@ -28,7 +28,7 @@ The project specifications can be found [here](https://frontend.turing.edu/proje
 
 ## Wins
 - Allowing player wins to persist on refresh using localStorage
-- Emphasizing which player's turn it is by updating the css to  highlight that player's image in the side side panel
+- Emphasizing which player's turn it is by updating the css to  highlight that player's image in the side panel
 
 ## Challenges and Improvements
 - One challenge was allowing the gameboard display to respond to changes in screen size without also adjusting when the player tokens are placed. While this is currently achieved on normal computer browser sizes, it does not maintain in very reduced or mobile-sized screens.
