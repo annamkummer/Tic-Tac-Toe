@@ -22,7 +22,7 @@ The project specifications can be found [here](https://frontend.turing.edu/proje
 - The Player class houses player ids and tokens and saves and retrieves win counts from local storage.
 - DOM interactions are handled in the main.js file. It displays the gameboard and player data on page load and then uses the data model to update the board as users click in the squares.
 
-## Contributers
+## Contributors
 - [Anna Kummer](https://github.com/annamkummer)
 - Review by [James Sullivan](https://github.com/jsullivan5)
 
