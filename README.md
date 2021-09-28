@@ -7,13 +7,9 @@ https://user-images.githubusercontent.com/75143561/135121533-54c3b59f-fe3a-4173-
 
 ## Install and Setup
 In your terminal,
-- clone: git@github.com:annamkummer/AnnaAndDavidMotivationalPosters.git
+- clone: git@github.com:annamkummer/Tic-Tac-Toe.git
 - and run: open index.html<br><br>
 The project specifications can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
-
-## Contributers
-- [Anna Kummer](https://github.com/annamkummer)
-- Review by [James Sullivan](https://github.com/jsullivan5)
 
 ## Technologies Used
 - JavaScript
@@ -21,7 +17,14 @@ The project specifications can be found [here](https://frontend.turing.edu/proje
 - HTML
 - Atom
 
-<!-- Code architecture? -->
+## Code Architecture
+- The data model is contained in the Game class. Its properties track the gameboard, player objects, and current turn. Its methods instantiate the Player class, update the board, check the board for wins and draws, and update the players' win counts.
+- The Player class houses player ids and tokens and saves and retrieves win counts from local storage.
+- DOM interactions are handled in the main.js file. It displays the gameboard and player data on page load and then uses the data model to update the board as users click in the squares.
+
+## Contributers
+- [Anna Kummer](https://github.com/annamkummer)
+- Review by [James Sullivan](https://github.com/jsullivan5)
 
 ## Wins
 - Allowing player wins to persist on refresh using localStorage
