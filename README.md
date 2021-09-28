@@ -9,7 +9,7 @@ In your terminal,
 - clone: git@github.com:annamkummer/AnnaAndDavidMotivationalPosters.git
 - and run: open index.html
 <br><br>
-The project specifications can be found [here] (https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
+The project specifications can be found [here] (!https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
 
 ## Contributers
 - [Anna Kummer] (https://github.com/annamkummer)
