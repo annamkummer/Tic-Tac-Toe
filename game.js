@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.board = ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'];
+    this.board = ['', '', '', '', '', '', '', '', ''];
     this.players = [];
     this.turn = null;
   }
@@ -35,7 +35,6 @@ class Game {
     }
   }
 
-// Can this checkForWins function be refactored?
   checkForWin() {
     var winningBoards = [
       [0, 1, 2],
@@ -51,13 +50,12 @@ class Game {
       var a = winningBoards[i][0];
       var b = winningBoards[i][1];
       var c = winningBoards[i][2];
-// Can this conditional be clearer?
-      if ((!(this.board[a] ==='empty') || !(this.board[b] === 'empty') || !(this.board[c] === 'empty')) && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+      if (!(this.board[a] ==='') && (this.board[a] === this.board[b]) && (this.board[a] === this.board[c])) {
         this.updateWinCount(this.board[a]);
         return this.board[a];
       }
     }
-    if (!this.board.includes('empty')) {
+    if (!this.board.includes('')) {
       return 'draw';
     }
     return false;
@@ -73,6 +71,6 @@ class Game {
   }
 
   resetBoard() {
-    this.board = ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'];
+    this.board = ['', '', '', '', '', '', '', '', ''];
   }
 }
