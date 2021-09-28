@@ -33,12 +33,3 @@ The project specifications can be found [here](https://frontend.turing.edu/proje
 ## Challenges and Improvements
 - One challenge was allowing the gameboard display to respond to changes in screen size without also adjusting when the player tokens are placed. While this is currently achieved on normal computer browser sizes, it does not maintain in very reduced or mobile-sized screens.
 - Future additions may include incorporating sounds and the ability for users to play across devices while maintaining their win counts.
-
-
-
-
- <!-- Overview of project and goals
-Overview of technologies used, your code architecture, challenges, wins, and any other reflections
-Screenshots/gifs of your app -->
-
-
