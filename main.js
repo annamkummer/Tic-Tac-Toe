@@ -1,3 +1,5 @@
+// research immediately invoked functions to eliminate global variables
+
 var game = new Game();
 
 var gameboard = document.querySelector('#gameboard');
@@ -16,7 +18,7 @@ function newGame() {
 }
 
 function createGameboard() {
-  gameboard.innerHTML =  ``;
+  gameboard.innerHTML =  '';
   for (var i = 0; i < 9; i++) {
     gameboard.innerHTML += `<article class='squares free-square box-${i}' id='${i}'></article>`;
   }
@@ -29,10 +31,9 @@ function displayTurn() {
 
 function emphasizeTurn() {
   for (var i = 0; i < sidePanels.length; i++) {
+    var turn = 'not-turn'
     if (game.turn === game.players[i]) {
-      var turn = 'turn';
-    } else {
-      var turn = 'not-turn';
+      turn = 'turn';
     }
     sidePanels[i].innerHTML = `
       <img class=${turn} src=${game.players[i].tokenImg} alt=${game.players[i].tokenAltText}>
@@ -62,8 +63,7 @@ function displayToken() {
 function checkForWin() {
   var result = game.checkForWin();
   if (!result) {
-    displayTurn();
-    return;
+    return displayTurn();
   } else if (result === 'draw') {
     showDrawContent();
   } else {
