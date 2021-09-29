@@ -1,3 +1,5 @@
+(function () {
+
 var game = new Game();
 
 var gameboard = document.querySelector('#gameboard');
@@ -86,3 +88,5 @@ function endGame() {
   setTimeout(displayTurn, 1500);
   setTimeout(emphasizeTurn, 1500);
 }
+
+})();
